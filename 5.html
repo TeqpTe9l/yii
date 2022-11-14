@@ -5,35 +5,104 @@
   <title>Страница 5</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-  .box {
-  display: flex;
-  margin: 0 -5px;
+    * {
+      box-sizing: border-box;
     }
-  .item {
-     flex: 1 1 auto;
-     margin: 0 5px;
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
     }
-/* just for styling */
-.box {
-    margin-bottom: 10px;
+    
+    /* Поплавок четыре колонки бок о бок */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 10px;
     }
-    .item {
-    background: rgb(120, 114, 206);
-    height: 50px;
-    text-align: center;
+    
+    /* Удалите лишние левые и правые поля, из-за заполнения */
+    .row {margin: 0 -5px;}
+    
+    /* Очистить поплавки после столбцов */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
     }
-  </style>
- </head>
- <body>
-        <div class='box'>
-          <div class='item'>Колонка 1</div>
-          <div class='item'>Колонка 2</div>
-          <div class='item'>Колонка 3</div>
-          <div class='item'>Колонка 4</div>
-          <div class='item'>Колонка 5</div>
-          <div class='item'>Колонка 6</div>
+    
+    /* Отзывчивые столбцы */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    
+    /* Стиль контейнера карточек */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      text-align: center;
+      background-color: #9e687e;
+    }
+    </style>
+    </head>
+    <body>
+    <h1>Колонки адаптивных карточек</h1>
+    
+
+    
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h3>Карточка 1</h3>
+          <p>Некоторый текст</p>
+          <p>Некоторый текст</p>
         </div>
-        
+      </div>
+    
+      <div class="column">
+        <div class="card">
+          <h3>Карточка 2</h3>
+          <p>Некоторый текст</p>
+          <p>Некоторый текст</p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+          <h3>Карточка 3</h3>
+          <p>Некоторый текст</p>
+          <p>Некоторый текст</p>
+        </div>
+      </div>
+      
+      <div class="column">
+        <div class="card">
+          <h3>Карточка 4</h3>
+          <p>Некоторый текст</p>
+          <p>Некоторый текст</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <h3>Карточка 5</h3>
+          <p>Некоторый текст</p>
+          <p>Некоторый текст</p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <h3>Карточка 6</h3>
+          <p>Некоторый текст</p>
+          <p>Некоторый текст</p>
+        </div>
+      </div>
+
+    </div>
   <div><a href="index.html">На главную</a></div>
  </body>
 </html>
